@@ -1,0 +1,13 @@
+# Python garbage
+__pycache__/
+*.pyc
+
+# Virtual Environment (The huge folder)
+venv/
+env/
+
+# Environment variables (Secrets)
+.env
+
+# Docker / OS junk
+.DS_Store
