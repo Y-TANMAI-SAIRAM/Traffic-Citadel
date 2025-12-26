@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  # Service 1: The Database (We name it "redis")
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  # Service 2: Your Python API (We name it "web")
+  web:
+    build: .             # Build the Dockerfile we just made
+    ports:
+      - "8000:80"        # Forward port 8000 on laptop to port 80 in the container
+    depends_on:
+      - redis            # Wait for Redis to start before starting the App
+    environment:
+      - REDIS_HOST=redis # Tell the App: "The database is at the address 'redis'"

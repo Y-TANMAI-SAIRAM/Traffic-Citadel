@@ -1,5 +1,5 @@
 # 1. Start with a lightweight version of Python (like buying a basic empty box)
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # 2. Create a folder inside the box called "code" to work in
 WORKDIR /code
